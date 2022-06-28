@@ -9,7 +9,15 @@ import SwiftUI
 
 struct UserProfileView: View {
     var body: some View {
-        Text("User Profile")
+        ScrollView {
+            VStack {
+                ProfileHeaderView()
+                    .padding()
+                FilterButtonView()
+                
+            }
+            .navigationTitle("batman")
+        }
     }
 }
 
