@@ -24,6 +24,10 @@
 		31339C3E286AF68C00CB42DC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31339C3D286AF68C00CB42DC /* Message.swift */; };
 		31339C40286AF95D00CB42DC /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31339C3F286AF95D00CB42DC /* MessageView.swift */; };
 		31339C42286AFAEA00CB42DC /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31339C41286AFAEA00CB42DC /* NewMessageView.swift */; };
+		31339C45286AFDEF00CB42DC /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31339C44286AFDEF00CB42DC /* UserProfileView.swift */; };
+		31339C47286AFE8200CB42DC /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31339C46286AFE8200CB42DC /* ProfileHeaderView.swift */; };
+		31339C49286AFE8B00CB42DC /* ProfileActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31339C48286AFE8B00CB42DC /* ProfileActionButtonView.swift */; };
+		31339C4B286AFEA100CB42DC /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31339C4A286AFEA100CB42DC /* FilterButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,10 @@
 		31339C3D286AF68C00CB42DC /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		31339C3F286AF95D00CB42DC /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		31339C41286AFAEA00CB42DC /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
+		31339C44286AFDEF00CB42DC /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		31339C46286AFE8200CB42DC /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		31339C48286AFE8B00CB42DC /* ProfileActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionButtonView.swift; sourceTree = "<group>"; };
+		31339C4A286AFEA100CB42DC /* FilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +116,7 @@
 		31339C25286AAF7800CB42DC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				31339C43286AFDE200CB42DC /* Profile */,
 				31339C32286AE93200CB42DC /* Messages */,
 				31339C28286AAFD700CB42DC /* FeedView.swift */,
 				31339C2A286AB27200CB42DC /* TweetCell.swift */,
@@ -144,6 +153,17 @@
 				31339C3B286AF2E000CB42DC /* ChatBubble.swift */,
 			);
 			path = Messages;
+			sourceTree = "<group>";
+		};
+		31339C43286AFDE200CB42DC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				31339C44286AFDEF00CB42DC /* UserProfileView.swift */,
+				31339C46286AFE8200CB42DC /* ProfileHeaderView.swift */,
+				31339C48286AFE8B00CB42DC /* ProfileActionButtonView.swift */,
+				31339C4A286AFEA100CB42DC /* FilterButtonView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,14 +240,18 @@
 				31339C38286AF00E00CB42DC /* MessageInputView.swift in Sources */,
 				31339C19286AAC6C00CB42DC /* ContentView.swift in Sources */,
 				31339C29286AAFD700CB42DC /* FeedView.swift in Sources */,
+				31339C47286AFE8200CB42DC /* ProfileHeaderView.swift in Sources */,
 				31339C3A286AF1E100CB42DC /* ChatView.swift in Sources */,
 				31339C34286AE94C00CB42DC /* ConversationsView.swift in Sources */,
+				31339C4B286AFEA100CB42DC /* FilterButtonView.swift in Sources */,
 				31339C17286AAC6B00CB42DC /* TwitterSwiftUIApp.swift in Sources */,
 				31339C3C286AF2E100CB42DC /* ChatBubble.swift in Sources */,
 				31339C2B286AB27200CB42DC /* TweetCell.swift in Sources */,
 				31339C42286AFAEA00CB42DC /* NewMessageView.swift in Sources */,
 				31339C3E286AF68C00CB42DC /* Message.swift in Sources */,
+				31339C45286AFDEF00CB42DC /* UserProfileView.swift in Sources */,
 				31339C2F286AB7C600CB42DC /* SearchBar.swift in Sources */,
+				31339C49286AFE8B00CB42DC /* ProfileActionButtonView.swift in Sources */,
 				31339C31286AE80000CB42DC /* UserCell.swift in Sources */,
 				31339C40286AF95D00CB42DC /* MessageView.swift in Sources */,
 				31339C36286AE9CF00CB42DC /* ConversationCell.swift in Sources */,
