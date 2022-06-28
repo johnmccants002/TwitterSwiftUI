@@ -22,29 +22,45 @@ enum TweetFilterOptions: Int, CaseIterable {
 }
 
 struct FilterButtonView: View {
+    @Binding var selectedOption: TweetFilterOptions
+    
     private let underlineWidth = UIScreen.main.bounds.width / CGFloat(TweetFilterOptions.allCases.count)
+    
+    private var padding: CGFloat {
+        let rawValue = CGFloat(selectedOption.rawValue)
+        let count = CGFloat(TweetFilterOptions.allCases.count)
+        return ((UIScreen.main.bounds.width / count) * rawValue) + 16
+    }
+    
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 ForEach(TweetFilterOptions.allCases, id: \.self) {  option in
-                    Text(option.title)
-                        .frame(width: underlineWidth)
-                        .foregroundColor(.blue)
+                    Button(action: {
+                        self.selectedOption = option
+                    }, label: {
+                        Text(option.title)
+                            .frame(width: underlineWidth)
+                    })
+                    
                     
                     
                 }
             }
             
             Rectangle()
-                .frame(width: underlineWidth, height: 3)
+                .frame(width: underlineWidth - 24, height: 3)
                 .foregroundColor(.blue)
+                .padding(.leading, padding)
                 .animation(.spring())
+            
         }
     }
 }
 
 struct FilterButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        FilterButtonView()
+        FilterButtonView(selectedOption: .constant(.tweets))
     }
 }
