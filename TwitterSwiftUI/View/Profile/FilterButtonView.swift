@@ -41,7 +41,7 @@ struct FilterButtonView: View {
                         self.selectedOption = option
                     }, label: {
                         Text(option.title)
-                            .frame(width: underlineWidth)
+                            .frame(width: underlineWidth - 8)
                     })
                     
                     
@@ -50,7 +50,7 @@ struct FilterButtonView: View {
             }
             
             Rectangle()
-                .frame(width: underlineWidth - 24, height: 3)
+                .frame(width: underlineWidth - 24, height: 3, alignment: .center)
                 .foregroundColor(.blue)
                 .padding(.leading, padding)
                 .animation(.spring())

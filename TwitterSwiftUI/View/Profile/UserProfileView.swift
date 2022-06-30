@@ -16,6 +16,10 @@ struct UserProfileView: View {
                     .padding()
                 FilterButtonView(selectedOption: $selectedFilter)
                 
+                ForEach(0..<9) { _ in
+                    TweetCell()
+                }
+                
             }
             .navigationTitle("batman")
         }
