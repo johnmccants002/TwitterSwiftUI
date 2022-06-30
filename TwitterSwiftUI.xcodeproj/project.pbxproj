@@ -34,6 +34,7 @@
 		31339C56286C33F000CB42DC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31339C55286C33F000CB42DC /* CustomTextField.swift */; };
 		31339C58286C3E1400CB42DC /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31339C57286C3E1300CB42DC /* CustomSecureField.swift */; };
 		31339C5A286C456700CB42DC /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31339C59286C456700CB42DC /* RegistrationView.swift */; };
+		31339C5C286D7D8800CB42DC /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31339C5B286D7D8800CB42DC /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		31339C55286C33F000CB42DC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		31339C57286C3E1300CB42DC /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		31339C59286C456700CB42DC /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		31339C5B286D7D8800CB42DC /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 			children = (
 				31339C55286C33F000CB42DC /* CustomTextField.swift */,
 				31339C57286C3E1300CB42DC /* CustomSecureField.swift */,
+				31339C5B286D7D8800CB42DC /* ImagePicker.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				31339C4E286BBABE00CB42DC /* NewTweetView.swift in Sources */,
 				31339C4B286AFEA100CB42DC /* FilterButtonView.swift in Sources */,
 				31339C17286AAC6B00CB42DC /* TwitterSwiftUIApp.swift in Sources */,
+				31339C5C286D7D8800CB42DC /* ImagePicker.swift in Sources */,
 				31339C3C286AF2E100CB42DC /* ChatBubble.swift in Sources */,
 				31339C5A286C456700CB42DC /* RegistrationView.swift in Sources */,
 				31339C2B286AB27200CB42DC /* TweetCell.swift in Sources */,

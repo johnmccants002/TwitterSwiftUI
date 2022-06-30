@@ -12,24 +12,49 @@ struct RegistrationView: View {
     @State var password = ""
     @State var fullname = ""
     @State var username = ""
-    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @State var showImagePicker = false
+    @State var selectedUIImage: UIImage?
+    @State var image: Image?
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    
+    
+    func loadImage() {
+        guard let selectedUIImage = selectedUIImage else {
+            return
+        }
+        image = Image(uiImage: selectedUIImage)
+    }
     
     
     var body: some View {
         ZStack {
             VStack {
-                Button(action: {}, label: {
-                    Image("plus_photo")
-                        .resizable()
-                        .renderingMode(.template)
-                        .scaledToFill()
-                        .frame(width: 140, height: 140)
-                        .padding(.top, 88)
-                        .padding(.bottom, 16)
-                        .foregroundColor(.white)
-                }).sheet(isPresented: $showImagePicker, content: {
-                    Text("Image Picker")
+                Button(action: { showImagePicker.toggle() }, label: {
+                    ZStack {
+                        if let image = image {
+                            image
+                                .resizable()
+                                .renderingMode(.template)
+                                .scaledToFill()
+                                .frame(width: 140, height: 140)
+                                .cornerRadius(70)
+                                .padding(.top, 88)
+                                .padding(.bottom, 16)
+                            .foregroundColor(.white)
+                        } else {
+                            Image("plus_photo")
+                                .resizable()
+                                .renderingMode(.template)
+                                .scaledToFill()
+                                .frame(width: 140, height: 140)
+                                .padding(.top, 88)
+                                .padding(.bottom, 16)
+                            .foregroundColor(.white)
+                        }
+                        
+                    }
+                }).sheet(isPresented: $showImagePicker, onDismiss: loadImage, content: {
+                    ImagePicker(image: $selectedUIImage)
                 })
                 
 
