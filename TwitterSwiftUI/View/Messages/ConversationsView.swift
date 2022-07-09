@@ -10,6 +10,7 @@ import SwiftUI
 struct ConversationsView: View {
     @State var isShowingingNewMessageView = false
     @State var showChat = false
+    
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             NavigationLink(destination: ChatView(), isActive: $showChat, label: {} )

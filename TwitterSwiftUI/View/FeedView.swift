@@ -9,13 +9,17 @@ import SwiftUI
 
 struct FeedView: View {
     @State var isShowingNewTweetView = false
+    @ObservedObject var viewModel = FeedViewModel()
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             ScrollView {
                 VStack  {
-                    ForEach(0..<100) {
-                        _ in
-                        TweetCell()
+                    ForEach(viewModel.tweets) {
+                        tweet in
+                        NavigationLink(destination: TweetDetailView(tweet: tweet)) {
+                            TweetCell(tweet: tweet)
+                        }
+                        
                             
                     }
                 }.padding()
