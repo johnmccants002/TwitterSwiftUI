@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ProfileActionButtonView: View {
     let isCurrentUser: Bool
-    let viewModel: ProfileViewModel
-    @Binding var isFollowed: Bool
+    @ObservedObject var viewModel: ProfileViewModel
     
     
     var body: some View {
@@ -24,8 +23,10 @@ struct ProfileActionButtonView: View {
             .cornerRadius(20)
         } else {
             HStack {
-                Button(action: {}, label: {
-                    Text(isFollowed ? "Following" : "Follow")
+                Button(action: {
+                    viewModel.user.isFollowed ? viewModel.unfollow() : viewModel.follow()
+                }, label: {
+                    Text(viewModel.user.isFollowed ? "Following" : "Follow")
                         .frame(width: 180, height: 40)
                         .background(Color.blue)
                         .foregroundColor(.white)

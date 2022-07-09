@@ -52,6 +52,7 @@
 		31499B7A2878FFB400B9CB73 /* TweetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31499B792878FFB300B9CB73 /* TweetDetailView.swift */; };
 		31499B7C287907AE00B9CB73 /* TweetActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31499B7B287907AE00B9CB73 /* TweetActionView.swift */; };
 		31499B7E2879094600B9CB73 /* TweetActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31499B7D2879094600B9CB73 /* TweetActionViewModel.swift */; };
+		31499B80287920F600B9CB73 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31499B7F287920F600B9CB73 /* LazyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		31499B792878FFB300B9CB73 /* TweetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailView.swift; sourceTree = "<group>"; };
 		31499B7B287907AE00B9CB73 /* TweetActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetActionView.swift; sourceTree = "<group>"; };
 		31499B7D2879094600B9CB73 /* TweetActionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetActionViewModel.swift; sourceTree = "<group>"; };
+		31499B7F287920F600B9CB73 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 				31339C55286C33F000CB42DC /* CustomTextField.swift */,
 				31339C57286C3E1300CB42DC /* CustomSecureField.swift */,
 				31339C5B286D7D8800CB42DC /* ImagePicker.swift */,
+				31499B7F287920F600B9CB73 /* LazyView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31499B80287920F600B9CB73 /* LazyView.swift in Sources */,
 				31339C2D286AB78F00CB42DC /* SearchView.swift in Sources */,
 				31339C50286BC16B00CB42DC /* TextArea.swift in Sources */,
 				31339C38286AF00E00CB42DC /* MessageInputView.swift in Sources */,
