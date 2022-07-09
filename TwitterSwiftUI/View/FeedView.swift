@@ -13,7 +13,7 @@ struct FeedView: View {
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             ScrollView {
-                VStack  {
+                VStack {
                     ForEach(viewModel.tweets) {
                         tweet in
                         NavigationLink(destination: TweetDetailView(tweet: tweet)) {

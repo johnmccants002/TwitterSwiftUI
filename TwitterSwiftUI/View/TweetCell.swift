@@ -11,7 +11,7 @@ import Kingfisher
 struct TweetCell: View {
     let tweet: Tweet
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 16) {
             HStack(alignment: .top, spacing: 12) {
                 KFImage(URL(string: tweet.profileImageUrl))
                     .resizable()
@@ -34,13 +34,16 @@ struct TweetCell: View {
                     }
                     Text(tweet.caption)
                         .foregroundColor(.black)
+                        .multilineTextAlignment(.leading)
+                  
                 
                 }
+                
 
             }
-            .padding(.bottom)
-            .padding(.trailing)
-            
+//            .padding(.bottom)
+//            .padding(.trailing)
+
             TweetActionView(tweet: tweet)
             
             Divider()
