@@ -27,4 +27,18 @@ struct Tweet: Identifiable {
         self.caption = dict["caption"] as? String ?? ""
         self.timestamp = dict["timestamp"] as? Timestamp ?? Timestamp(date: Date())
     }
+    
+    var timestampString: String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.second, .minute, .hour, .day, .weekOfMonth]
+        formatter.maximumUnitCount = 1
+        formatter.unitsStyle = .abbreviated
+        return formatter.string(from: timestamp.dateValue(), to: Date()) ?? ""
+    }
+    
+    var detailedTimestampString: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mm a · MM/dd/yyyy"
+        return formatter.string(from: timestamp.dateValue())
+    }
 }

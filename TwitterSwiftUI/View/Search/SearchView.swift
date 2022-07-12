@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SearchView: View {
     @State var searchText = ""
-    @ObservedObject var viewModel = SearchViewModel()
+    @ObservedObject var viewModel = SearchViewModel(config: .search)
     var body: some View {
         ScrollView {
             SearchBar(text: $searchText)
@@ -28,7 +28,6 @@ struct SearchView: View {
                 }
             }.padding(.leading)
         }
-        .navigationBarTitle("Search")
         .navigationBarTitleDisplayMode(.inline)
         
         

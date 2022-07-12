@@ -10,38 +10,54 @@ import SwiftUI
 struct ConversationsView: View {
     @State var isShowingingNewMessageView = false
     @State var showChat = false
+    @State var user: User?
+    @ObservedObject var viewModel = ConversationViewModel()
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            NavigationLink(destination: ChatView(), isActive: $showChat, label: {} )
+            if let user = user {
+                NavigationLink(destination: LazyView(ChatView(user: user)), isActive: $showChat, label: {} )
+                
+            }
+            
             ScrollView {
                 VStack {
-                    ForEach(0..<20) {
-                        _ in
-                        NavigationLink {
-                            ChatView()
-                        } label: {
-                            ConversationCell()
-                        }
+                    ForEach(viewModel.recentMessages) {
+                        message in
+                
+                        NavigationLink ( destination:
+                            LazyView(ChatView(user: message.user)),
+                         label: {
+                            ConversationCell(message: message)
+                                
+                        })
                     }
                 }.padding()
             }
-            Button(action: {self.isShowingingNewMessageView.toggle()}, label: {
-                Image(systemName: "envelope")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 32, height: 32)
-                    .padding()
+            HStack {
+                Spacer()
+                Button(action: {
+                    print("isShowingNewMessageView: \(isShowingingNewMessageView)")
+                    self.isShowingingNewMessageView = true
+                    
+                }, label: {
+                    Image(systemName: "envelope")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 32, height: 32)
+                        .padding()
+                })
+                .background(Color(.systemBlue))
+                .foregroundColor(.white)
+                .clipShape(Circle())
+                .padding()
+                .sheet(isPresented: $isShowingingNewMessageView, content: {
+                    NewMessageView(show: $isShowingingNewMessageView, startChat: $showChat, user: $user)
+   
             })
-            .background(Color(.systemBlue))
-            .foregroundColor(.white)
-            .clipShape(Circle())
-            .padding()
-            .sheet(isPresented: $isShowingingNewMessageView) {
-                NewMessageView(show: $isShowingingNewMessageView, startChat: $showChat)
-      
             }
         }
+ 
     }
 }
 

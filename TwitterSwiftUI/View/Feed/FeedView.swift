@@ -25,10 +25,12 @@ struct FeedView: View {
                 }.padding()
                 
             }
+            HStack {
+            Spacer()
             Button(action: {isShowingNewTweetView.toggle()}, label: {
                 Image(systemName: "plus")
                     .resizable()
-                    .renderingMode(.template)
+                    .scaledToFit()
                     .frame(width: 32, height: 32)
                     .padding()
             })
@@ -39,9 +41,13 @@ struct FeedView: View {
             .fullScreenCover(isPresented: $isShowingNewTweetView) {
                 NewTweetView(isPresented: $isShowingNewTweetView)
             }
+     
+
+        }
         }
         
     }
+        
 }
 
 struct FeedView_Previews: PreviewProvider {

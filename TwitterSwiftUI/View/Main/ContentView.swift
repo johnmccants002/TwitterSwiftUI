@@ -10,30 +10,35 @@ import Kingfisher
 
 struct ContentView: View {
     @EnvironmentObject var viewModel: AuthViewModel
+    @State var selection = 0
+    let titles = ["Home", "Search", "Messages"]
     
     var body: some View {
         Group {
             if viewModel.userSession != nil {
                 NavigationView {
                     
-                    TabView {
+                    TabView(selection: $selection) {
                         FeedView()
                             .tabItem {
                                 Image(systemName: "house")
                                 Text("Home")
-                            }
+                            }.tag(0)
+                    
                         SearchView()
                             .tabItem {
                                 Image(systemName: "magnifyingglass")
                                 Text("Search")
-                            }
+                            }.tag(1)
+              
                         ConversationsView()
                             .tabItem {
                                 Image(systemName: "envelope")
                                 Text("Messages")
-                            }
+                            }.tag(2)
+                      
                     }
-                    .navigationBarTitle("Home")
+                    .navigationTitle(titles[selection])
                     .navigationBarItems(leading: Button(action: {
                         viewModel.signout()
                     }, label: {
@@ -46,6 +51,7 @@ struct ContentView: View {
                     }))
                     .navigationBarTitleDisplayMode(.inline)
                 }
+                
                 
             } else {
                 LoginView()
