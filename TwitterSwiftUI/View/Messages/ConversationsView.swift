@@ -17,8 +17,7 @@ struct ConversationsView: View {
         ZStack(alignment: .bottomTrailing) {
             if let user = user {
                 NavigationLink(destination: LazyView(ChatView(user: user)), isActive: $showChat, label: {} )
-                
-            }
+                            }
             
             ScrollView {
                 VStack {

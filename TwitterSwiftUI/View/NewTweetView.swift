@@ -12,9 +12,11 @@ struct NewTweetView: View {
     @Binding var isPresented: Bool
     @State var captionText: String = ""
     @ObservedObject var viewModel: UploadTweetViewModel
+    @ObservedObject var feedViewModel: FeedViewModel
     
-    init(isPresented: Binding<Bool>) {
+    init(isPresented: Binding<Bool>, feedViewModel: FeedViewModel) {
         self._isPresented = isPresented
+        self.feedViewModel = feedViewModel
         self.viewModel = UploadTweetViewModel(isPresented: isPresented)
     }
     var body: some View {
@@ -42,7 +44,9 @@ struct NewTweetView: View {
                 }),
                                     trailing: Button(action: {
                     viewModel.uploadTweet(caption: captionText) { _ in
+                        self.feedViewModel.fetchTweets()
                         isPresented.toggle()
+                        
                     }
                 }, label: {
                     Text("Tweet")
@@ -59,8 +63,4 @@ struct NewTweetView: View {
     }
 }
 
-struct NewTweetView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewTweetView(isPresented: .constant(true))
-    }
-}
+

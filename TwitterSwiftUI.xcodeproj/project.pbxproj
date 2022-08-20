@@ -194,6 +194,7 @@
 				31499B752876E5C000B9CB73 /* FeedViewModel.swift */,
 				31499B7D2879094600B9CB73 /* TweetActionViewModel.swift */,
 				31499B81287A590000B9CB73 /* ChatViewModel.swift */,
+				31339C41286AFAEA00CB42DC /* NewMessageView.swift */,
 				31499B83287A65A200B9CB73 /* ConversationsViewModel.swift */,
 			);
 			path = ViewModels;
@@ -207,7 +208,6 @@
 				31339C37286AF00E00CB42DC /* MessageInputView.swift */,
 				31339C39286AF1E100CB42DC /* ChatView.swift */,
 				31339C3F286AF95D00CB42DC /* MessageView.swift */,
-				31339C41286AFAEA00CB42DC /* NewMessageView.swift */,
 				31339C3B286AF2E000CB42DC /* ChatBubble.swift */,
 			);
 			path = Messages;

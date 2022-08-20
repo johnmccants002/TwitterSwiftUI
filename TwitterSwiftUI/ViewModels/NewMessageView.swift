@@ -17,7 +17,8 @@ struct NewMessageView: View {
  
     
     func checkBools() {
-        print("This is show: \(show) and this is startChat \(startChat)")
+        
+        print("This is show: \(show) and this is startChat \(startChat) and this is the user \(user)")
     }
     
     var body: some View {

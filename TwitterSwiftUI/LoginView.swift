@@ -41,7 +41,9 @@ struct LoginView: View {
                 
                 HStack {
                     Spacer()
-                    Button(action: {}, label: {
+                    Button(action: {
+                       
+                    }, label: {
                         Text("Forgot Password?")
                             .font(.footnote)
                             .bold()
